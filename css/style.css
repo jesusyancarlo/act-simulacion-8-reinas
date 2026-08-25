@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+    width: 400px;
+}
+
+td {
+    border: 1px solid black;
+    height: 50px;
+    text-align: center; /* Opcional: centra el contenido */
+}
+
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+    background-color: yellow;
+}
+
+tr:nth-child(odd) td:nth-child(even),
+tr:nth-child(even) td:nth-child(odd) {
+    background-color: orange;
+}
