@@ -8,7 +8,9 @@ var contador = 0;
                 celda.style.backgroundSize = "25px";
                 celda.style.backgroundRepeat = "no-repeat";
                 celda.style.backgroundPosition = "center";
+               bloquear(celda);
                 contador++;
+  
             }
             
         } else {
@@ -18,23 +20,15 @@ var contador = 0;
     }
 
 function cambiar(r, c) {
-    var tablero = document.getElementById("tablero");
+  const tablero = document.getElementById("tablero");
 
-    var r1 = r, c1 = c;
-    var r2 = r, c2 = c;
-    var r3 = r, c3 = c;
-    var r4 = r, c4 = c;
-
-    for (let i = 0; i < 8; i++) {
-
-        tablero.rows[r].cells[i].style.backgroundColor = "red";
-        tablero.rows[i].cells[c].style.backgroundColor = "red";
-
-        if (r1 < 8 && c1 < 8) tablero.rows[r1++].cells[c1++].style.backgroundColor = "red";
-        if (r2 < 8 && c2 >= 0) tablero.rows[r2++].cells[c2--].style.backgroundColor = "red";
-        if (r3 >= 0 && c3 >= 0) tablero.rows[r3--].cells[c3--].style.backgroundColor = "red";
-        if (r4 >= 0 && c4 < 8) tablero.rows[r4--].cells[c4++].style.backgroundColor = "red";
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      if (i === r || j === c || Math.abs(i - r) === Math.abs(j - c)) {
+        tablero.rows[i].cells[j].style.backgroundColor = "red";
+      }
     }
+  }
 }
 
 function reinicio(){
@@ -42,4 +36,27 @@ function reinicio(){
     for (let i = 0; i < celda.length; i++) {
         celda[i].style.backgroundColor="";
     }
+}
+
+function bloquear(celda){
+    const row = celda.parentNode.rowIndex;
+    const col = celda.cellIndex;
+    const tablero = document.getElementById("tablero")
+    /*bloqueamos la columna y el renglón*/
+    for (let i = 0; i < 8; i++) {
+        //horizontal
+        if (i !== col){
+            tablero.rows[row].cells[i].onclick = null;
+        }
+
+        //vertical
+        if (i !== row){
+            tablero.rows[i].cells[col].onclick = null;
+        }
+    }
+        //diagonales
+        for(let i = -7; i <= 7; i++){
+            if()
+        }
+    
 }
