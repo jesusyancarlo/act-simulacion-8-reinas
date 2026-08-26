@@ -28,11 +28,11 @@ function cambiar(r, c) {
 
     if (r1<8 & c1<8) celda.rows[r1++].cells[c1++].style.backgroundColor="red";
 
-    // if (r2>=0 & c2<8) celda.rows[r3--].cells[c3++].style.backgroundColor="red"; //
+    if (r2<8 & c2>=0) celda.rows[r2++].cells[c2--].style.backgroundColor="red"; //
 
-    if (r3>=0 & c3<8) celda.rows[r3--].cells[c3++].style.backgroundColor="red";
+    if (r3>=0 & c3>=0) celda.rows[r3--].cells[c3--].style.backgroundColor="red";
 
-    // if (r4>=0 & c4<8) celda.rows[r3--].cells[c4++].style.backgroundColor="red"; //
+    if (r4>=0 & c4<8) celda.rows[r4--].cells[c4++].style.backgroundColor="red"; //
 
     }
 }
