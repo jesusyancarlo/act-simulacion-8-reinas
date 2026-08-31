@@ -10,6 +10,7 @@ var contador = 0;
                 celda.style.backgroundPosition = "center";
                bloquear(celda);
                 contador++;
+                document.getElementById("reinasContador").textContent = `Reinas colocadas: ${contador}`
   
             }
             
@@ -54,9 +55,41 @@ function bloquear(celda){
             tablero.rows[i].cells[col].onclick = null;
         }
     }
-        //diagonales
+        //diagonal
         for(let i = -7; i <= 7; i++){
-            if()
-        }
-    
+            
+            //diagonal principal
+            if(row + i >= 0 && row + i <= 8 && col + i >= 0 && col + i < 8 && i !== 0) {
+            tablero.rows[row+i].cells[col+i].onclick = null;
+            }
+
+            //diagonal secundaria
+            if(row + i >= 0 && row + i <= 8 && col - i >= 0 && col - i < 8 && i !== 0) {
+            tablero.rows[row+i].cells[col-i].onclick = null;
+            }
+        }    
 }
+
+function reiniciarBloqueo(celda) {
+    const row = celda.parentNode.rowIndex;
+    const col = celda.cellIndex;
+    const tablero = document.getElementById("tablero")
+    /*desbloqueamos la columna y el renglón*/
+    for (let i = 0; i < 8; i++)
+}
+    
+//diagonal
+for(let i = -7; i <= 7; i++){
+            
+    //diagonal principal
+    if(row + i >= 0 && row + i <= 8 && col + i >= 0 && col + i < 8 && i !== 0) {
+    tablero.rows[row+i].cells[col+i].onclick = function();
+        cellclick(this);
+    }
+
+    //diagonal secundaria
+    if(row + i >= 0 && row + i <= 8 && col - i >= 0 && col - i < 8 && i !== 0) {
+    tablero.rows[row+i].cells[col-i].onclick = function();
+        cellclick(this);
+    }
+}  

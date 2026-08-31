@@ -18,3 +18,7 @@ tr:nth-child(odd) td:nth-child(even),
 tr:nth-child(even) td:nth-child(odd) {
     background-color: orange;
 }
+
+#reinasContador{
+    font-size: 100px;
+}
