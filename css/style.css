@@ -1,24 +1,96 @@
+body {
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+    flex: 1; /* empuja el footer hacia abajo */
+  }
+
+h1{
+  text-align: center;
+  font-size: 75px;
+  margin: auto;
+  color: black;
+  font-family: 'Iomanoid', sans-serif;
+  margin-bottom: 15px;
+}
+
+#desc{
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  margin-bottom: 15px;
+  font-family: 'Iomanoid front', sans-serif;
+}
+
 table {
-    border-collapse: collapse;
-    width: 400px;
+  border-collapse: collapse;
+  width: 600px;
+  margin: auto;
 }
 
 td {
-    border: 1px solid black;
-    height: 50px;
-    text-align: center; /* Opcional: centra el contenido */
+  border: 2px solid black;
+  height: 75px;
 }
 
 tr:nth-child(even) td:nth-child(even),
 tr:nth-child(odd) td:nth-child(odd) {
-    background-color: yellow;
+  background-color: #FAFF07;
 }
 
 tr:nth-child(odd) td:nth-child(even),
 tr:nth-child(even) td:nth-child(odd) {
-    background-color: orange;
+  background-color: #FFAD10;
+}
+
+#pcontador{
+  font-size: 35px;
+  color: black;
+  text-align: center;
+}
+
+#pganador{
+  font-size: 48px;
+  color: black;
+  text-align: center;
 }
 
 #reinasContador{
-    font-size: 100px;
+  font-size: 35px;
+  color: black;
+  text-align: center;
+  font-family: 'Iomanoid front', sans-serif;
+}
+
+  footer {
+    background-color: #000;  /* color de fondo */
+    color: white;            /* color del texto */
+    text-align: center;
+    padding: 20px;
+    width: 100%;             /* ocupa todo el ancho */
+    font-family: 'Iomanoid back', sans-serif;
+    font-size: 25px;
+  }
+
+  @font-face {
+  font-family: 'Iomanoid'; /* nombre que tú eliges */
+  src: url('../font/iomanoid.ttf') format('truetype');
+}
+
+  @font-face {
+  font-family: 'Iomanoid back'; /* nombre que tú eliges */
+  src: url('../font/iomanoid\ back.ttf') format('truetype');
+}
+
+  @font-face {
+  font-family: 'Iomanoid front'; /* nombre que tú eliges */
+  src: url('../font/iomanoid\ front.ttf') format('truetype');
 }
